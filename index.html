@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARAN — Essential Oils</title>
+  <meta name="description" content="ARAN Essential Oils — Canada origin • COA & SDS available. Cedarwood, Lavender, Eucalyptus." />
+
+  <style>
+    :root{
+      --bg: #0b1210;          /* deep green-black */
+      --panel: #0f1a16;       /* forest panel */
+      --panel2:#111f1a;
+      --text: #f3f0e8;        /* warm off-white */
+      --muted:#c8c1b3;
+      --line: rgba(243,240,232,.12);
+
+      --wood1:#4a3222;        /* dark wood */
+      --wood2:#7a563b;        /* warm wood */
+      --gold:#d9c9a6;         /* muted gold */
+      --accent:#a9d7c8;       /* soft mint accent */
+
+      --radius: 18px;
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans Thai", sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(169,215,200,.10), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(217,201,166,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:22px}
+
+    /* Top bar */
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:14px;padding:10px 0 18px;
+      position:sticky; top:0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,18,16,.85), rgba(11,18,16,.35));
+      border-bottom:1px solid var(--line);
+      z-index:20;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      text-decoration:none;
+    }
+    .mark{
+      width:38px;height:38px;border-radius:50%;
+      background: linear-gradient(135deg, rgba(217,201,166,.95), rgba(169,215,200,.55));
+      box-shadow: 0 12px 40px rgba(217,201,166,.12);
+    }
+    .brandText{
+      display:flex;flex-direction:column;gap:2px;
+      letter-spacing:.22em;text-transform:uppercase;
+      font-weight:800;font-size:14px;
+    }
+    .brandText span{
+      font-weight:600;
+      letter-spacing: .08em;
+      text-transform:none;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .navRight{display:flex;align-items:center;gap:10px}
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(243,240,232,.04);
+      color: var(--muted);
+      padding:10px 12px;
+      border-radius:999px;
+      font-size:13px;
+      text-decoration:none;
+      display:inline-flex;gap:8px;align-items:center;
+    }
+    .pill:hover{background: rgba(243,240,232,.07); color:var(--text)}
+    .cta{
+      border:1px solid rgba(217,201,166,.35);
+      background: linear-gradient(180deg, rgba(217,201,166,.25), rgba(217,201,166,.10));
+      color: var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:700;
+    }
+    .cta:hover{border-color: rgba(217,201,166,.55)}
+
+    /* Dropdown */
+    .dropdown{position:relative}
+    .dropBtn{
+      cursor:pointer;
+      border:1px solid var(--line);
+      background: rgba(243,240,232,.04);
+      color:var(--muted);
+      padding:10px 12px;border-radius:999px;
+      font-size:13px;
+      display:inline-flex;gap:8px;align-items:center;
+      user-select:none;
+    }
+    .dropBtn:hover{background: rgba(243,240,232,.07); color:var(--text)}
+    .menu{
+      position:absolute; right:0; top:46px;
+      width:240px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(15,26,22,.98);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:none;
+    }
+    .menu a{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:12px 14px;
+      text-decoration:none;
+      color:var(--text);
+      border-bottom:1px solid rgba(243,240,232,.08);
+      font-size:14px;
+    }
+    .menu a:last-child{border-bottom:none}
+    .menu a:hover{background: rgba(243,240,232,.06)}
+    .tag{
+      font-size:12px;color:var(--muted);
+      border:1px solid rgba(243,240,232,.12);
+      padding:3px 8px;border-radius:999px;
+      background: rgba(243,240,232,.03);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      padding:22px 0 10px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      .navRight{gap:8px}
+      .pill{display:none}
+    }
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(243,240,232,.05), rgba(243,240,232,.02));
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .heroLeft{padding:22px}
+    .kicker{
+      display:inline-flex;gap:10px;align-items:center;
+      color: var(--muted);
+      font-size:13px;
+      letter-spacing:.08em;
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:rgba(169,215,200,.8)}
+    h1{
+      margin:14px 0 10px;
+      font-size:44px;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      margin:0 0 16px;
+      color: var(--muted);
+      font-size:16px;
+      max-width:56ch;
+    }
+
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 18px}
+    .badge{
+      border:1px solid rgba(243,240,232,.12);
+      background: rgba(243,240,232,.03);
+      color: var(--muted);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    .heroActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btnPrimary{
+      text-decoration:none;
+      padding:12px 14px;border-radius:12px;
+      border:1px solid rgba(217,201,166,.45);
+      background: linear-gradient(180deg, rgba(217,201,166,.30), rgba(217,201,166,.12));
+      font-weight:800;
+    }
+    .btnPrimary:hover{border-color: rgba(217,201,166,.65)}
+    .btnGhost{
+      text-decoration:none;
+      padding:12px 14px;border-radius:12px;
+      border:1px solid rgba(243,240,232,.14);
+      background: rgba(243,240,232,.03);
+      color:var(--text);
+      font-weight:700;
+    }
+    .btnGhost:hover{background: rgba(243,240,232,.06)}
+
+    /* Hero right visual (wood + image) */
+    .heroRight{
+      display:grid;
+      grid-template-rows: auto 1fr;
+      min-height: 360px;
+    }
+    .woodBar{
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.35)),
+        repeating-linear-gradient(
+          90deg,
+          rgba(122,86,59,.92) 0px,
+          rgba(122,86,59,.92) 28px,
+          rgba(74,50,34,.92) 28px,
+          rgba(74,50,34,.92) 54px
+        );
+      border-bottom:1px solid rgba(243,240,232,.12);
+      padding:14px 16px;
+    }
+    .woodBar .title{
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color: var(--text);
+      font-size:12px;
+    }
+    .woodBar .small{
+      color: rgba(243,240,232,.78);
+      font-size:12px;
+      margin-top:4px;
+    }
+    .heroMedia{
+      padding:18px;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(700px 420px at 30% 20%, rgba(169,215,200,.10), transparent 60%),
+        linear-gradient(180deg, rgba(15,26,22,.55), rgba(15,26,22,.10));
+    }
+    .mock{
+      width:min(440px, 100%);
+      aspect-ratio: 4 / 3;
+      border-radius:16px;
+      border:1px solid rgba(243,240,232,.14);
+      background: rgba(255,255,255,.02);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      position:relative;
+    }
+    .mock img{
+      width:100%; height:100%;
+      object-fit:cover;
+      opacity:.95;
+      display:block;
+    }
+    .mock .placeholder{
+      padding:18px;
+      text-align:center;
+      color: var(--muted);
+      font-size:14px;
+    }
+    .mock .overlay{
+      position:absolute; inset:auto 12px 12px 12px;
+      display:flex;justify-content:space-between;align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(243,240,232,.14);
+      background: rgba(11,18,16,.55);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      font-size:13px;
+    }
+    .overlay b{color:var(--gold)}
+    .overlay a{
+      text-decoration:none;
+      border:1px solid rgba(243,240,232,.14);
+      padding:7px 10px;border-radius:999px;
+      background: rgba(243,240,232,.05);
+    }
+    .overlay a:hover{background: rgba(243,240,232,.08)}
+
+    /* Product cards */
+    .section{padding:18px 0}
+    .sectionHead{
+      display:flex;justify-content:space-between;align-items:flex-end;gap:14px;
+      margin:10px 0 12px;
+    }
+    .sectionHead h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-.01em;
+    }
+    .sectionHead p{margin:0;color:var(--muted);font-size:14px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(243,240,232,.05), rgba(243,240,232,.02));
+      overflow:hidden;
+      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+    }
+    .cardTop{
+      padding:14px 14px 12px;
+      border-bottom:1px solid rgba(243,240,232,.10);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,0)),
+        repeating-linear-gradient(90deg, rgba(122,86,59,.50) 0, rgba(122,86,59,.50) 26px, rgba(74,50,34,.50) 26px, rgba(74,50,34,.50) 52px);
+    }
+    .cardTop .name{
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:13px;
+    }
+    .cardBody{padding:14px}
+    .desc{color:var(--muted);font-size:14px;margin:0 0 12px}
+    .sizes{
+      display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px
+    }
+    .size{
+      border:1px solid rgba(243,240,232,.12);
+      background: rgba(243,240,232,.03);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--text);
+    }
+    .priceRow{
+      display:flex;justify-content:space-between;align-items:center;
+      border-top:1px solid rgba(243,240,232,.10);
+      padding-top:12px;
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .priceRow b{color:var(--text);font-size:16px;letter-spacing:.02em}
+    .cardActions{display:flex;gap:10px;margin-top:12px}
+    .btnSmall{
+      flex:1;
+      text-decoration:none;
+      padding:11px 12px;
+      border-radius:12px;
+      border:1px solid rgba(243,240,232,.14);
+      background: rgba(243,240,232,.03);
+      text-align:center;
+      font-weight:800;
+      font-size:13px;
+    }
+    .btnSmall:hover{background: rgba(243,240,232,.07)}
+    .btnGold{
+      border:1px solid rgba(217,201,166,.45);
+      background: linear-gradient(180deg, rgba(217,201,166,.26), rgba(217,201,166,.10));
+    }
+    .btnGold:hover{border-color: rgba(217,201,166,.65)}
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      padding:18px 0 32px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footerRow{
+      display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+      margin-top:8px;
+    }
+    .tiny{opacity:.9}
+    .links{display:flex;gap:12px;flex-wrap:wrap}
+    .links a{text-decoration:none;border-bottom:1px dashed rgba(243,240,232,.25)}
+    .links a:hover{color:var(--text);border-bottom-color:rgba(243,240,232,.55)}
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:0;padding-bottom:0;">
+      <a class="brand" href="index.html">
+        <div class="mark"></div>
+        <div class="brandText">
+          ARAN
+          <span>Essential Oils • Nordic forest tone</span>
+        </div>
+      </a>
+
+      <div class="navRight">
+        <a class="pill" href="#about">Canada origin • COA & SDS</a>
+
+        <div class="dropdown" id="dropdown">
+          <div class="dropBtn" id="dropBtn">Products ▾</div>
+          <div class="menu" id="menu" aria-label="Products menu">
+            <a href="cedarwood.html">Cedarwood <span class="tag">Woody</span></a>
+            <a href="lavender.html">Lavender <span class="tag">Floral</span></a>
+            <a href="eucalyptus.html">Eucalyptus <span class="tag">Fresh</span></a>
+          </div>
+        </div>
+
+        <a class="cta" href="#contact">Contact / Order</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="panel heroLeft">
+        <div class="kicker"><span class="dot"></span> Canada origin • COA & SDS available</div>
+        <h1>Cool, calm essentials—<br/>crafted for everyday ritual.</h1>
+        <p class="sub">
+          ARAN offers essential oils in two sizes—<b>15 ml</b> and <b>100 ml</b>—with a Nordic dark-green aesthetic
+          and warm wood contrast. Simple, clean, and premium.
+        </p>
+
+        <div class="badges">
+          <div class="badge">15 ml — ฿275</div>
+          <div class="badge">100 ml — ฿460</div>
+          <div class="badge">Aromatherapy use</div>
+          <div class="badge">Repack-ready (B2B)</div>
+        </div>
+
+        <div class="heroActions">
+          <a class="btnPrimary" href="#products">Browse products</a>
+          <a class="btnGhost" href="#about">See documents (COA/SDS)</a>
+        </div>
+      </div>
+
+      <div class="panel heroRight">
+        <div class="woodBar">
+          <div class="title">ARAN • Essential Oils</div>
+          <div class="small">Dark green + wood • Premium minimal layout</div>
+        </div>
+
+        <div class="heroMedia">
+          <div class="mock">
+            <!-- ถ้าคุณมีรูป mockup ให้ใส่รูปแทน placeholder นี้ -->
+            <!-- <img src="assets/aran-hero-mockup.png" alt="ARAN Essential Oils mockup" /> -->
+            <div class="placeholder">
+              วางรูป mockup ของคุณที่นี่ (เช่น <b>assets/aran-hero-mockup.png</b>)<br/>
+              แล้วเอาเครื่องหมายคอมเมนต์ออกในโค้ด
+            </div>
+            <div class="overlay">
+              <div><b>ARAN</b> — Cedarwood • Lavender • Eucalyptus</div>
+              <a href="#products">Shop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+      <div class="sectionHead">
+        <div>
+          <h2>Products</h2>
+          <p>3 scents • 2 sizes (15 ml / 100 ml) • consistent Nordic tone.</p>
+        </div>
+        <p><span class="tiny">Tip:</span> คลิก “Products ▾” บนเมนูเพื่อไปหน้ารายละเอียดของแต่ละกลิ่น</p>
+      </div>
+
+      <div class="grid">
+        <!-- Cedarwood -->
+        <article class="card">
+          <div class="cardTop">
+            <div class="name">CEDARWOOD</div>
+          </div>
+          <div class="cardBody">
+            <p class="desc">Woody, deep, calm. A warm forest base for a clean Nordic mood.</p>
+            <div class="sizes">
+              <div class="size">15 ml — ฿275</div>
+              <div class="size">100 ml — ฿460</div>
+            </div>
+            <div class="priceRow">
+              <span>Best for</span> <b>diffuser / blend</b>
+            </div>
+            <div class="cardActions">
+              <a class="btnSmall btnGold" href="cedarwood.html">View details</a>
+              <a class="btnSmall" href="#contact">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lavender -->
+        <article class="card">
+          <div class="cardTop">
+            <div class="name">LAVENDER</div>
+          </div>
+          <div class="cardBody">
+            <p class="desc">Soft floral calm. Clean and gentle—perfect for a quiet evening vibe.</p>
+            <div class="sizes">
+              <div class="size">15 ml — ฿275</div>
+              <div class="size">100 ml — ฿460</div>
+            </div>
+            <div class="priceRow">
+              <span>Best for</span> <b>night ritual</b>
+            </div>
+            <div class="cardActions">
+              <a class="btnSmall btnGold" href="lavender.html">View details</a>
+              <a class="btnSmall" href="#contact">Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Eucalyptus -->
+        <article class="card">
+          <div class="cardTop">
+            <div class="name">EUCALYPTUS</div>
+          </div>
+          <div class="cardBody">
+            <p class="desc">Fresh, crisp, clear. A cool breath of air—clean and energizing.</p>
+            <div class="sizes">
+              <div class="size">15 ml — ฿275</div>
+              <div class="size">100 ml — ฿460</div>
+            </div>
+            <div class="priceRow">
+              <span>Best for</span> <b>daytime focus</b>
+            </div>
+            <div class="cardActions">
+              <a class="btnSmall btnGold" href="eucalyptus.html">View details</a>
+              <a class="btnSmall" href="#contact">Order</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="panel" style="padding:18px">
+        <div class="sectionHead" style="margin:0 0 10px">
+          <h2 style="margin:0">Transparency</h2>
+          <p>Simple proof builds trust—without giving away supplier details.</p>
+        </div>
+
+        <div class="badges" style="margin:10px 0 6px">
+          <div class="badge">Canada origin</div>
+          <div class="badge">COA available (on request)</div>
+          <div class="badge">SDS available (on request)</div>
+          <div class="badge">For aromatherapy use</div>
+        </div>
+
+        <p style="margin:10px 0 0;color:var(--muted);font-size:14px">
+          หมายเหตุ: ไม่ควรเคลมรักษาโรคบนหน้าเว็บ/โฆษณา เพื่อให้ขายได้อย่างปลอดภัยและเป็นมืออาชีพ
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="panel" style="padding:18px">
+        <div class="sectionHead" style="margin:0 0 10px">
+          <h2 style="margin:0">Contact / Order</h2>
+          <p>ใส่ช่องทางสั่งซื้อของคุณตรงนี้</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+          <div class="card" style="box-shadow:none">
+            <div class="cardBody">
+              <p class="desc"><b>Line / IG / Facebook</b> (แนะนำใส่ลิงก์)</p>
+              <div class="cardActions">
+                <a class="btnSmall btnGold" href="#" onclick="alert('ใส่ลิงก์ Line OA/IG ของคุณตรง href ได้เลยครับ');return false;">LINE OA</a>
+                <a class="btnSmall" href="#" onclick="alert('ใส่ลิงก์ Shopee/Lazada ได้เลยครับ');return false;">Marketplace</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none">
+            <div class="cardBody">
+              <p class="desc"><b>B2B / Wholesale</b> — ส่งคำขอ COA/SDS และราคาเหมา</p>
+              <div class="cardActions">
+                <a class="btnSmall btnGold" href="mailto:your@email.com?subject=ARAN%20B2B%20Inquiry">Email</a>
+                <a class="btnSmall" href="#" onclick="alert('ใส่เบอร์/WhatsApp ได้ครับ');return false;">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> ARAN • Essential Oils</div>
+      <div class="footerRow">
+        <div class="tiny">Canada origin • COA & SDS available upon request</div>
+        <div class="links">
+          <a href="cedarwood.html">Cedarwood</a>
+          <a href="lavender.html">Lavender</a>
+          <a href="eucalyptus.html">Eucalyptus</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Dropdown behavior
+    const dropBtn = document.getElementById("dropBtn");
+    const menu = document.getElementById("menu");
+
+    function toggleMenu(){
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    dropBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener("click", () => {
+      menu.style.display = "none";
+    });
+
+    menu.addEventListener("click", (e) => e.stopPropagation());
+  </script>
+</body>
+</html>

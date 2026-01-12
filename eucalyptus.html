@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARAN — Eucalyptus</title>
+  <meta name="description" content="ARAN Eucalyptus Essential Oil — Canada origin • COA & SDS available • 15 ml ฿275 • 100 ml ฿460" />
+
+  <style>
+    :root{
+      --bg:#0b1210; --panel:#0f1a16; --text:#f3f0e8; --muted:#c8c1b3;
+      --line:rgba(243,240,232,.12);
+      --woodA:#7a563b; --woodB:#4a3222;
+      --gold:#d9c9a6; --accent:#a9d7c8;
+      --radius:18px; --shadow:0 24px 70px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans Thai", sans-serif;
+      background:
+        radial-gradient(1100px 650px at 18% 0%, rgba(169,215,200,.10), transparent 55%),
+        radial-gradient(900px 600px at 92% 10%, rgba(217,201,166,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:22px}
+
+    .top{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      border-bottom:1px solid var(--line);
+      padding:12px 0 16px;
+    }
+    .brand{display:flex;gap:12px;align-items:center;text-decoration:none}
+    .mark{
+      width:38px;height:38px;border-radius:50%;
+      background: linear-gradient(135deg, rgba(217,201,166,.95), rgba(169,215,200,.55));
+      box-shadow:0 12px 40px rgba(217,201,166,.12);
+    }
+    .brandText{
+      display:flex;flex-direction:column;gap:2px;
+      letter-spacing:.22em;text-transform:uppercase;
+      font-weight:900;font-size:14px;
+    }
+    .brandText span{
+      letter-spacing:.08em;text-transform:none;font-weight:600;
+      font-size:12px;color:var(--muted);
+    }
+
+    .navBtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(243,240,232,.04);
+      color:var(--muted);
+      padding:10px 12px;border-radius:999px;
+      font-size:13px;text-decoration:none;
+    }
+    .pill:hover{background:rgba(243,240,232,.07);color:var(--text)}
+    .cta{
+      border:1px solid rgba(217,201,166,.45);
+      background:linear-gradient(180deg, rgba(217,201,166,.28), rgba(217,201,166,.10));
+      padding:10px 14px;border-radius:999px;
+      font-size:13px;text-decoration:none;font-weight:800;
+    }
+    .cta:hover{border-color:rgba(217,201,166,.65)}
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(243,240,232,.05), rgba(243,240,232,.02));
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      padding:18px 0 10px;
+      align-items:stretch;
+    }
+    @media (max-width:920px){ .hero{grid-template-columns:1fr} }
+
+    .woodBar{
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.35)),
+        repeating-linear-gradient(90deg, rgba(122,86,59,.92) 0px, rgba(122,86,59,.92) 28px, rgba(74,50,34,.92) 28px, rgba(74,50,34,.92) 54px);
+      border-bottom:1px solid rgba(243,240,232,.12);
+      padding:14px 16px;
+    }
+    .woodBar .t{font-weight:900;letter-spacing:.18em;text-transform:uppercase;font-size:12px}
+    .woodBar .s{margin-top:4px;color:rgba(243,240,232,.78);font-size:12px}
+
+    .imgWrap{
+      padding:16px;
+      display:grid;place-items:center;
+      background:
+        radial-gradient(700px 420px at 30% 20%, rgba(169,215,200,.10), transparent 60%),
+        linear-gradient(180deg, rgba(15,26,22,.55), rgba(15,26,22,.10));
+    }
+    .mock{
+      width:min(520px,100%);
+      aspect-ratio: 4 / 3;
+      border-radius:16px;
+      border:1px solid rgba(243,240,232,.14);
+      overflow:hidden;
+      background:rgba(255,255,255,.02);
+      position:relative;
+    }
+    .mock img{width:100%;height:100%;object-fit:cover;display:block}
+    .placeholder{
+      height:100%;display:grid;place-items:center;text-align:center;
+      padding:18px;color:var(--muted);font-size:14px;
+    }
+    .overlay{
+      position:absolute;inset:auto 12px 12px 12px;
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:14px;
+      border:1px solid rgba(243,240,232,.14);
+      background:rgba(11,18,16,.55);backdrop-filter: blur(10px);
+      font-size:13px;
+    }
+    .overlay b{color:var(--gold)}
+    .overlay a{
+      text-decoration:none;border:1px solid rgba(243,240,232,.14);
+      padding:7px 10px;border-radius:999px;background:rgba(243,240,232,.05);
+    }
+    .overlay a:hover{background:rgba(243,240,232,.08)}
+
+    .content{padding:18px}
+    .kicker{color:var(--muted);font-size:13px;letter-spacing:.08em;display:flex;gap:10px;align-items:center}
+    .dot{width:7px;height:7px;border-radius:50%;background:rgba(169,215,200,.8)}
+    h1{margin:12px 0 8px;font-size:38px;line-height:1.15;letter-spacing:-.02em}
+    .sub{margin:0;color:var(--muted);font-size:15px;max-width:60ch}
+
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 12px}
+    .badge{
+      border:1px solid rgba(243,240,232,.12);
+      background:rgba(243,240,232,.03);
+      color:var(--muted);
+      padding:8px 12px;border-radius:999px;
+      font-size:13px;
+    }
+
+    .priceBox{
+      margin-top:14px;
+      border-top:1px solid rgba(243,240,232,.10);
+      padding-top:14px;
+      display:grid;gap:10px;
+    }
+    .row{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      padding:10px 12px;border-radius:14px;
+      border:1px solid rgba(243,240,232,.12);
+      background:rgba(243,240,232,.03);
+    }
+    .row .left{display:flex;flex-direction:column}
+    .row .left b{letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+    .row .left span{color:var(--muted);font-size:13px}
+    .row .right{font-weight:900;font-size:18px}
+
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{
+      flex:1;
+      text-decoration:none;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid rgba(243,240,232,.14);
+      background:rgba(243,240,232,.03);
+      text-align:center;
+      font-weight:900;font-size:14px;
+      min-width: 180px;
+    }
+    .btn:hover{background:rgba(243,240,232,.07)}
+    .btnGold{
+      border:1px solid rgba(217,201,166,.45);
+      background:linear-gradient(180deg, rgba(217,201,166,.28), rgba(217,201,166,.10));
+    }
+    .btnGold:hover{border-color:rgba(217,201,166,.65)}
+
+    .twoCol{
+      display:grid;grid-template-columns: 1fr 1fr;gap:14px;margin-top:14px
+    }
+    @media (max-width:920px){ .twoCol{grid-template-columns:1fr} }
+    .mini{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(243,240,232,.05), rgba(243,240,232,.02));
+      padding:14px;
+    }
+    .mini h2{margin:0 0 6px;font-size:16px}
+    .mini p{margin:0;color:var(--muted);font-size:14px}
+
+    footer{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      padding:18px 0 30px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .links a{text-decoration:none;border-bottom:1px dashed rgba(243,240,232,.25)}
+    .links a:hover{color:var(--text);border-bottom-color:rgba(243,240,232,.55)}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="top">
+      <a class="brand" href="index.html">
+        <div class="mark"></div>
+        <div class="brandText">ARAN <span>Canada origin • COA & SDS</span></div>
+      </a>
+
+      <div class="navBtns">
+        <a class="pill" href="cedarwood.html">Cedarwood</a>
+        <a class="pill" href="lavender.html">Lavender</a>
+        <a class="pill" href="eucalyptus.html">Eucalyptus</a>
+        <a class="cta" href="index.html#contact">Order</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <!-- Image panel -->
+      <div class="panel">
+        <div class="woodBar">
+          <div class="t">Eucalyptus</div>
+          <div class="s">Fresh • Crisp • Clear</div>
+        </div>
+        <div class="imgWrap">
+          <div class="mock">
+            <img src="assets/eucalyptus.png" alt="ARAN Eucalyptus Essential Oil" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="placeholder" style="display:none">
+              ใส่รูปที่ <b>assets/eucalyptus.png</b><br/>หรือแก้ชื่อไฟล์ในโค้ดให้ตรงกับรูปคุณ
+            </div>
+            <div class="overlay">
+              <div><b>ARAN</b> — Eucalyptus Essential Oil</div>
+              <a href="index.html#products">Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content panel -->
+      <div class="panel">
+        <div class="content">
+          <div class="kicker"><span class="dot"></span> Canada origin • COA & SDS available upon request</div>
+          <h1>Eucalyptus Essential Oil</h1>
+          <p class="sub">
+            กลิ่นสดชื่น โปร่ง สะอาด ให้ความรู้สึกเหมือนอากาศเย็น ๆ เหมาะกับช่วงกลางวันหรือเวลาต้องการความเฟรช
+            (สำหรับการใช้งานด้านกลิ่น / aromatherapy)
+          </p>
+
+          <div class="badges">
+            <div class="badge">Two sizes</div>
+            <div class="badge">15 ml & 100 ml</div>
+            <div class="badge">Aromatherapy use</div>
+          </div>
+
+          <div class="priceBox">
+            <div class="row">
+              <div class="left">
+                <b>15 ml</b>
+                <span>ทดลองกลิ่น • พกง่าย</span>
+              </div>
+              <div class="right">฿275</div>
+            </div>
+
+            <div class="row">
+              <div class="left">
+                <b>100 ml</b>
+                <span>คุ้มค่า • เหมาะสำหรับใช้ต่อเนื่อง</span>
+              </div>
+              <div class="right">฿460</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <!-- แก้ลิงก์ LINE OA / Marketplace ของคุณใน href -->
+            <a class="btn btnGold" href="index.html#contact">Order via LINE / IG</a>
+            <a class="btn" href="mailto:your@email.com?subject=ARAN%20Eucalyptus%20Order%20Inquiry">Email (B2B)</a>
+          </div>
+
+          <div class="twoCol">
+            <div class="mini">
+              <h2>How to use</h2>
+              <p>เหมาะสำหรับเครื่อง diffuser หรือเป็นวัตถุดิบสำหรับผสมกลิ่น (ควรเจือจางก่อนใช้งาน)</p>
+            </div>
+            <div class="mini">
+              <h2>Notes</h2>
+              <p>ไม่เคลมรักษาโรค • เอกสาร COA/SDS ขอได้เมื่อสั่งซื้อจริง</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> ARAN • Eucalyptus</div>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="cedarwood.html">Cedarwood</a>
+        <a href="lavender.html">Lavender</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
